@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rule Engine</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5">Rule Engine with AST</h1>
+    <hr>
+    
+    <!-- Form to Create a Rule -->
+    <form action="/create-rule" method="POST">
+      <div class="form-group">
+        <label for="rule">Enter Rule</label>
+        <input type="text" class="form-control" id="rule" name="rule" placeholder="e.g., (age > 30 AND department = 'Sales')">
+      </div>
+      <button type="submit" class="btn btn-primary">Create Rule</button>
+    </form>
+
+    <hr>
+
+    <!-- Form to Combine Rules -->
+    <form action="/combine-rules" method="POST">
+      <div class="form-group">
+        <label for="rules">Enter Rule IDs to Combine</label>
+        <input type="text" class="form-control" id="rules" name="rules" placeholder="e.g., 1, 2">
+      </div>
+      <button type="submit" class="btn btn-success">Combine Rules</button>
+    </form>
+
+    <hr>
+
+    <!-- Form to Evaluate Rule -->
+    <form action="/evaluate-rule" method="POST">
+      <div class="form-group">
+        <label for="data">Enter User Data (JSON Format)</label>
+        <textarea class="form-control" id="data" name="data" rows="3" placeholder='e.g., {"age": 35, "department": "Sales", "salary": 60000, "experience": 3}'></textarea>
+      </div>
+      <button type="submit" class="btn btn-info">Evaluate Rule</button>
+    </form>
+
+    <hr>
+
+    <!-- Display Results -->
+    <% if (result) { %>
+      <div class="alert alert-success">Result: <%= result %></div>
+    <% } %>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
