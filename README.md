@@ -132,3 +132,7 @@ To test the application:
 ---
 
 Let me know if you'd like further adjustments!
+
+---
+![Screenshot (249)](https://github.com/user-attachments/assets/de5ec963-d6c5-4830-a49a-2d196e1e779c)
+
